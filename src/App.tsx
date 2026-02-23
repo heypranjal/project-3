@@ -49,6 +49,20 @@ function App() {
     if (heroInView) setHeroAnimKey((k) => k + 1);
   }, [heroInView]);
 
+  const [formData, setFormData] = useState({ name: '', number: '', whoAreYou: '', email: '', budget: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, number, whoAreYou, email, budget } = formData;
+    const body = `Name: ${name}%0ANumber: ${number}%0AWho Are You: ${whoAreYou}%0AEmail: ${email}%0ABudget: ${budget}`;
+    window.location.href = `mailto:sarthak@taggify.in?subject=New Enquiry from ${encodeURIComponent(name)}&body=${body}`;
+    setFormData({ name: '', number: '', whoAreYou: '', email: '', budget: '' });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -857,11 +871,14 @@ function App() {
             </motion.h2>
 
             {/* Contact Form */}
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <input
                   type="text"
+                  name="name"
                   placeholder="NAME"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors"
                 />
               </div>
@@ -869,13 +886,21 @@ function App() {
               <div>
                 <input
                   type="tel"
+                  name="number"
                   placeholder="NUMBER"
+                  value={formData.number}
+                  onChange={handleChange}
                   className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
-                <select className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors text-gray-600">
+                <select
+                  name="whoAreYou"
+                  value={formData.whoAreYou}
+                  onChange={handleChange}
+                  className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors text-gray-600"
+                >
                   <option value="">WHO ARE YOU?</option>
                   <option value="business">Business Owner</option>
                   <option value="marketing">Marketing Manager</option>
@@ -887,13 +912,21 @@ function App() {
               <div>
                 <input
                   type="email"
+                  name="email"
                   placeholder="EMAIL ADDRESS"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
-                <select className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors text-gray-600">
+                <select
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="w-full border-b-2 border-gray-300 pb-3 text-lg bg-transparent focus:border-black focus:outline-none transition-colors text-gray-600"
+                >
                   <option value="">BUDGET</option>
                   <option value="under-50k">Under ₹50,000</option>
                   <option value="50k-1l">₹50,000 - ₹1,00,000</option>
