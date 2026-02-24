@@ -66,7 +66,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="flex items-center justify-between px-8 py-6">
+      <nav className="flex items-center justify-between px-4 md:px-8 py-4 md:py-6">
         <div className="flex items-center">
           <div className="text-2xl font-bold text-gray-600">Taggify</div>
         </div>
@@ -79,18 +79,18 @@ function App() {
 
       {/* Hero Section */}
       <div ref={heroRef} className="relative mx-4 mt-8">
-        <div className="bg-white rounded-3xl p-12 relative overflow-hidden">
-          <div className="flex items-center justify-between">
+        <div className="bg-white rounded-3xl p-6 md:p-12 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Left Content */}
-            <div className="flex-1 max-w-2xl">
+            <div className="flex-1 w-full max-w-2xl">
               {/* Logo in hero */}
-              <div className="mb-8">
-                <div className="text-4xl font-bold text-gray-600">Taggify</div>
+              <div className="mb-6 md:mb-8">
+                <div className="text-2xl md:text-4xl font-bold text-gray-600">Taggify</div>
               </div>
 
               {/* Main Heading */}
               <motion.h1
-                className="text-6xl font-bold text-gray-800 leading-tight mb-8 flex flex-wrap"
+                className="text-4xl md:text-6xl font-bold text-gray-800 leading-tight mb-6 md:mb-8 flex flex-wrap"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -145,7 +145,7 @@ function App() {
             </div>
 
             {/* Right Illustration */}
-            <div className="flex-1 flex justify-end">
+            <div className="hidden md:flex flex-1 justify-end">
               <div className="relative">
                 {/* Main illustration container */}
                 <div className="w-96 h-80 relative">
@@ -230,10 +230,10 @@ function App() {
 
       {/* Who We Are Section */}
       <div className="mx-4 mt-16">
-        <div className="bg-white rounded-3xl px-12 py-16 text-center">
+        <div className="bg-white rounded-3xl px-4 md:px-12 py-8 md:py-16 text-center">
           <div className="text-sm font-semibold text-black mb-6 tracking-wider">WHO WE ARE</div>
           <motion.h2
-            className="text-5xl font-bold text-black leading-tight"
+            className="text-3xl md:text-5xl font-bold text-black leading-tight"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -249,7 +249,7 @@ function App() {
       <div className="mx-4 mt-16">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-6xl font-bold text-black"
+            className="text-4xl md:text-6xl font-bold text-black"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -260,7 +260,7 @@ function App() {
         </div>
 
         {/* Meme Portal Logos */}
-        <div className="flex justify-center items-center space-x-8 mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-10 md:mb-16">
           {/* Adult Society */}
           <div className="w-24 h-24 rounded-full border-4 border-red-500 bg-black flex items-center justify-center">
             <div className="text-blue-400 font-bold text-xs text-center">
@@ -301,18 +301,18 @@ function App() {
         </div>
 
         {/* Statistics */}
-        <div className="border-2 border-black rounded-2xl p-12">
-          <div className="grid grid-cols-3 divide-x-2 divide-gray-300">
-            <div className="text-center px-8">
-              <div className="text-6xl font-bold text-black mb-4"><AnimatedNumber to={75} suffix="+" duration={1.5} /></div>
+        <div className="border-2 border-black rounded-2xl p-6 md:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y-2 md:divide-y-0 md:divide-x-2 divide-gray-300">
+            <div className="text-center px-4 md:px-8 py-6 md:py-0">
+              <div className="text-5xl md:text-6xl font-bold text-black mb-4"><AnimatedNumber to={75} suffix="+" duration={1.5} /></div>
               <div className="text-xl font-semibold text-black">Brands</div>
             </div>
-            <div className="text-center px-8">
-              <div className="text-6xl font-bold text-black mb-4"><AnimatedNumber to={950} suffix="+" duration={1.5} /></div>
+            <div className="text-center px-4 md:px-8 py-6 md:py-0">
+              <div className="text-5xl md:text-6xl font-bold text-black mb-4"><AnimatedNumber to={950} suffix="+" duration={1.5} /></div>
               <div className="text-xl font-semibold text-black">Campaigns</div>
             </div>
-            <div className="text-center px-8">
-              <div className="text-6xl font-bold text-black mb-4"><AnimatedNumber to={10000} suffix="+" duration={1.5} /></div>
+            <div className="text-center px-4 md:px-8 py-6 md:py-0">
+              <div className="text-5xl md:text-6xl font-bold text-black mb-4"><AnimatedNumber to={10000} suffix="+" duration={1.5} /></div>
               <div className="text-xl font-semibold text-black">Creators Community</div>
             </div>
           </div>
@@ -320,13 +320,13 @@ function App() {
       </div>
 
       {/* Services Section */}
-      <div className="mx-4 mt-20 mb-20">
-        <div className="flex">
+      <div className="mx-4 mt-12 md:mt-20 mb-12 md:mb-20">
+        <div className="flex flex-col md:flex-row">
           {/* Left Side - Header */}
-          <div className="w-1/3 pr-12">
+          <div className="w-full md:w-1/3 md:pr-12 mb-8 md:mb-0">
             <div className="text-sm font-semibold text-gray-600 mb-4 tracking-wider">SERVICES</div>
             <motion.h2
-              className="text-5xl font-bold text-black leading-tight mb-8"
+              className="text-3xl md:text-5xl font-bold text-black leading-tight mb-8"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -350,7 +350,7 @@ function App() {
           </div>
 
           {/* Right Side - Service Cards */}
-          <div className="w-2/3 grid grid-cols-2 gap-8">
+          <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             {/* Meme Marketing */}
             <div className="border-2 border-black rounded-2xl p-8 bg-gray-100">
               <div className="mb-6">
@@ -464,10 +464,10 @@ function App() {
 
       {/* Campaign Showcase Section */}
       <div className="mx-4 mt-20 mb-20">
-        <div className="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 rounded-3xl p-12">
-          <div className="text-center mb-12">
+        <div className="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 rounded-3xl p-6 md:p-12">
+          <div className="text-center mb-8 md:mb-12">
             <motion.h2
-              className="text-5xl font-bold text-black mb-6"
+              className="text-3xl md:text-5xl font-bold text-black mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -483,10 +483,10 @@ function App() {
           {/* Ladder-Type Campaign List */}
           <div className="flex flex-col gap-24 relative">
             {/* Stage OTT */}
-            <div className="flex items-center justify-start relative">
+            <div className="flex flex-col md:flex-row items-center justify-start relative gap-8 md:gap-0">
               {/* Text left */}
-              <div className="w-1/2 flex flex-col items-end pr-8">
-                <div className="max-w-md text-right">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-end pr-0 md:pr-8">
+                <div className="max-w-md text-center md:text-right">
                   <div className="text-xs text-gray-500 mb-2 font-semibold">MEME MARKETING BY TAGGIFY</div>
                   <motion.h3
                     className="text-3xl font-bold text-black mb-3"
@@ -503,12 +503,12 @@ function App() {
                 </div>
               </div>
               {/* Card right */}
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto">
                   <div className="relative">
-                    <img 
-                      src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                      alt="Stage OTT Campaign" 
+                    <img
+                      src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=400"
+                      alt="Stage OTT Campaign"
                       className="w-64 h-80 object-cover mx-auto"
                     />
                     <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -518,17 +518,17 @@ function App() {
                 </div>
               </div>
               {/* Ladder line */}
-              <div className="absolute left-1/2 top-0 h-full w-2 flex flex-col items-center">
+              <div className="hidden md:flex absolute left-1/2 top-0 h-full w-2 flex-col items-center">
                 <div className="h-full w-1 bg-black"></div>
                 <div className="w-4 h-4 bg-black rounded-full mt-2"></div>
               </div>
             </div>
 
             {/* Sunfeast */}
-            <div className="flex items-center justify-end relative">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-end relative gap-8 md:gap-0">
               {/* Card left */}
-              <div className="w-1/2">
-                <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto ml-auto">
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto md:ml-auto">
                   <div className="relative">
                     <img 
                       src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=400" 
@@ -545,8 +545,8 @@ function App() {
                 </div>
               </div>
               {/* Text right */}
-              <div className="w-1/2 flex flex-col items-start pl-8">
-                <div className="max-w-md text-left">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start pl-0 md:pl-8">
+                <div className="max-w-md text-center md:text-left">
                   <div className="text-xs text-gray-500 mb-2 font-semibold">MEME MARKETING BY TAGGIFY</div>
                   <motion.h3
                     className="text-3xl font-bold text-black mb-3"
@@ -563,17 +563,17 @@ function App() {
                 </div>
               </div>
               {/* Ladder line */}
-              <div className="absolute left-1/2 top-0 h-full w-2 flex flex-col items-center">
+              <div className="hidden md:flex absolute left-1/2 top-0 h-full w-2 flex-col items-center">
                 <div className="h-full w-1 bg-black"></div>
                 <div className="w-4 h-4 bg-black rounded-full mt-2"></div>
               </div>
             </div>
 
             {/* Astrotalk */}
-            <div className="flex items-center justify-start relative">
+            <div className="flex flex-col md:flex-row items-center justify-start relative gap-8 md:gap-0">
               {/* Text left */}
-              <div className="w-1/2 flex flex-col items-end pr-8">
-                <div className="max-w-md text-right">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-end pr-0 md:pr-8">
+                <div className="max-w-md text-center md:text-right">
                   <div className="text-xs text-gray-500 mb-2 font-semibold">MEME MARKETING BY TAGGIFY</div>
                   <motion.h3
                     className="text-3xl font-bold text-black mb-3"
@@ -590,11 +590,11 @@ function App() {
                 </div>
               </div>
               {/* Card right */}
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto">
                   <div className="relative">
-                    <img 
-                      src="https://images.pexels.com/photos/8471016/pexels-photo-8471016.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                    <img
+                      src="https://images.pexels.com/photos/8471016/pexels-photo-8471016.jpeg?auto=compress&cs=tinysrgb&w=400"
                       alt="Astrotalk Campaign" 
                       className="w-64 h-80 object-cover mx-auto"
                     />
@@ -608,17 +608,17 @@ function App() {
                 </div>
               </div>
               {/* Ladder line */}
-              <div className="absolute left-1/2 top-0 h-full w-2 flex flex-col items-center">
+              <div className="hidden md:flex absolute left-1/2 top-0 h-full w-2 flex-col items-center">
                 <div className="h-full w-1 bg-black"></div>
                 <div className="w-4 h-4 bg-black rounded-full mt-2"></div>
               </div>
             </div>
 
             {/* KFC */}
-            <div className="flex items-center justify-end relative">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-end relative gap-8 md:gap-0">
               {/* Card left */}
-              <div className="w-1/2">
-                <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto ml-auto">
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto md:ml-auto">
                   <div className="relative">
                     <img 
                       src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=400" 
@@ -635,8 +635,8 @@ function App() {
                 </div>
               </div>
               {/* Text right */}
-              <div className="w-1/2 flex flex-col items-start pl-8">
-                <div className="max-w-md text-left">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start pl-0 md:pl-8">
+                <div className="max-w-md text-center md:text-left">
                   <div className="text-xs text-gray-500 mb-2 font-semibold">MEME MARKETING BY TAGGIFY</div>
                   <motion.h3
                     className="text-3xl font-bold text-black mb-3"
@@ -653,17 +653,17 @@ function App() {
                 </div>
               </div>
               {/* Ladder line */}
-              <div className="absolute left-1/2 top-0 h-full w-2 flex flex-col items-center">
+              <div className="hidden md:flex absolute left-1/2 top-0 h-full w-2 flex-col items-center">
                 <div className="h-full w-1 bg-black"></div>
                 <div className="w-4 h-4 bg-black rounded-full mt-2"></div>
               </div>
             </div>
 
             {/* Redmi Note 12 Pro */}
-            <div className="flex items-center justify-start relative">
+            <div className="flex flex-col md:flex-row items-center justify-start relative gap-8 md:gap-0">
               {/* Text left */}
-              <div className="w-1/2 flex flex-col items-end pr-8">
-                <div className="max-w-md text-right">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-end pr-0 md:pr-8">
+                <div className="max-w-md text-center md:text-right">
                   <div className="text-xs text-gray-500 mb-2 font-semibold">MEME MARKETING BY TAGGIFY</div>
                   <motion.h3
                     className="text-3xl font-bold text-black mb-3"
@@ -680,11 +680,11 @@ function App() {
                 </div>
               </div>
               {/* Card right */}
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto">
                   <div className="relative">
-                    <img 
-                      src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                    <img
+                      src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400"
                       alt="Redmi Note 12 Pro Campaign" 
                       className="w-64 h-80 object-cover mx-auto"
                     />
@@ -695,17 +695,17 @@ function App() {
                 </div>
               </div>
               {/* Ladder line */}
-              <div className="absolute left-1/2 top-0 h-full w-2 flex flex-col items-center">
+              <div className="hidden md:flex absolute left-1/2 top-0 h-full w-2 flex-col items-center">
                 <div className="h-full w-1 bg-black"></div>
                 <div className="w-4 h-4 bg-black rounded-full mt-2"></div>
               </div>
             </div>
 
             {/* Fast and Furious X */}
-            <div className="flex items-center justify-end relative">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-end relative gap-8 md:gap-0">
               {/* Card left */}
-              <div className="w-1/2">
-                <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto ml-auto">
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-2xl border-4 border-black overflow-hidden shadow-xl w-72 mx-auto md:ml-auto">
                   <div className="relative">
                     <img 
                       src="https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg?auto=compress&cs=tinysrgb&w=400" 
@@ -717,8 +717,8 @@ function App() {
                 </div>
               </div>
               {/* Text right */}
-              <div className="w-1/2 flex flex-col items-start pl-8">
-                <div className="max-w-md text-left">
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start pl-0 md:pl-8">
+                <div className="max-w-md text-center md:text-left">
                   <div className="text-xs text-gray-500 mb-2 font-semibold">MEME MARKETING BY TAGGIFY</div>
                   <motion.h3
                     className="text-3xl font-bold text-black mb-3"
@@ -735,7 +735,7 @@ function App() {
                 </div>
               </div>
               {/* Ladder line (last one, no dot) */}
-              <div className="absolute left-1/2 top-0 h-full w-2 flex flex-col items-center">
+              <div className="hidden md:flex absolute left-1/2 top-0 h-full w-2 flex-col items-center">
                 <div className="h-full w-1 bg-black"></div>
               </div>
             </div>
@@ -745,12 +745,12 @@ function App() {
 
       {/* Our Clients Section */}
       <div className="mx-4 mt-20 mb-20">
-        <div className="border-4 border-black rounded-3xl p-12 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500">
-          <div className="flex">
+        <div className="border-4 border-black rounded-3xl p-6 md:p-12 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500">
+          <div className="flex flex-col md:flex-row">
             {/* Left Side - Header */}
-            <div className="w-1/2 pr-12">
+            <div className="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0">
               <motion.h2
-                className="text-5xl font-bold text-black mb-6"
+                className="text-3xl md:text-5xl font-bold text-black mb-6"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -764,49 +764,49 @@ function App() {
             </div>
 
             {/* Right Side - Client Logos Grid */}
-            <div className="w-1/2">
-              <div className="grid grid-cols-4 gap-4">
+            <div className="w-full md:w-1/2">
+              <div className="grid grid-cols-4 gap-2 md:gap-4">
                 {/* Row 1 */}
-                <div className="w-20 h-20 bg-yellow-400 rounded-lg flex items-center justify-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-yellow-400 rounded-lg flex items-center justify-center">
                   <div className="text-blue-600 font-bold text-lg">f</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
                     <div className="text-white font-bold text-xs">KFC</div>
                   </div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-red-500 font-bold text-sm">Sunfeast</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-yellow-600 font-bold text-sm">Astrotalk</div>
                 </div>
 
                 {/* Row 2 */}
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-blue-600 font-bold text-sm">FAST</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="w-8 h-8 bg-red-500 rounded-full"></div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-blue-600 font-bold text-xs">amazon<br/>miniTV</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-red-500 font-bold text-sm">toothsi</div>
                 </div>
 
                 {/* Row 3 */}
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-orange-500 font-bold text-xs">opshappy</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-blue-600 font-bold text-xs">DAAWAT<br/>BASMATI</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-green-600 font-bold text-xs">BKT<br/>GROWING TOGETHER</div>
                 </div>
-                <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
                   <div className="text-yellow-600 font-bold text-xs">clubhouse</div>
                 </div>
               </div>
@@ -816,10 +816,10 @@ function App() {
       </div>
 
       {/* Contact Form Section */}
-      <div className="mx-4 mt-20 mb-20">
-        <div className="flex items-center">
+      <div className="mx-4 mt-12 md:mt-20 mb-12 md:mb-20">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-0">
           {/* Left Side - Illustration */}
-          <div className="w-1/2 pr-12">
+          <div className="hidden md:block w-full md:w-1/2 md:pr-12">
             <div className="relative">
               {/* Laptop Illustration */}
               <div className="w-80 h-60 relative">
@@ -858,10 +858,10 @@ function App() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="w-1/2 pl-12">
+          <div className="w-full md:w-1/2 md:pl-12">
             <div className="text-sm font-semibold text-gray-600 mb-4 tracking-wider">ENQUIRE NOW</div>
             <motion.h2
-              className="text-5xl font-bold text-black mb-8 leading-tight"
+              className="text-3xl md:text-5xl font-bold text-black mb-8 leading-tight"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -964,8 +964,8 @@ function App() {
       </div>
 
       {/* Social Media Icons Section */}
-      <div className="mx-4 mt-20 mb-12">
-        <div className="flex justify-center items-center space-x-16">
+      <div className="mx-4 mt-12 md:mt-20 mb-8 md:mb-12">
+        <div className="flex justify-center items-center space-x-8 md:space-x-16">
           {/* Email */}
           <div className="text-center">
             <div className="w-20 h-20 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full flex items-center justify-center mb-4 mx-auto">
@@ -999,7 +999,7 @@ function App() {
       <div className="mx-4 mt-16 mb-16">
         <div className="text-center mb-12">
           <motion.h2
-            className="text-5xl font-bold text-gray-800 mb-8"
+            className="text-3xl md:text-5xl font-bold text-gray-800 mb-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1009,9 +1009,9 @@ function App() {
           </motion.h2>
         </div>
 
-        <div className="flex justify-center space-x-8">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
           {/* Email Card */}
-          <div className="border-4 border-black rounded-2xl p-8 bg-white text-center w-80">
+          <div className="border-4 border-black rounded-2xl p-8 bg-white text-center w-full max-w-xs md:w-80">
             <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full flex items-center justify-center mb-6 mx-auto">
               <Mail className="w-8 h-8 text-white" />
             </div>
@@ -1030,7 +1030,7 @@ function App() {
           </div>
 
           {/* Phone Number Card */}
-          <div className="border-4 border-black rounded-2xl p-8 bg-white text-center w-80">
+          <div className="border-4 border-black rounded-2xl p-8 bg-white text-center w-full max-w-xs md:w-80">
             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6 mx-auto">
               <Phone className="w-8 h-8 text-white" />
             </div>
@@ -1049,7 +1049,7 @@ function App() {
           </div>
 
           {/* Office Address Card */}
-          <div className="border-4 border-black rounded-2xl p-8 bg-white text-center w-80">
+          <div className="border-4 border-black rounded-2xl p-8 bg-white text-center w-full max-w-xs md:w-80">
             <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-6 mx-auto">
               <MapPin className="w-8 h-8 text-white" />
             </div>
@@ -1086,8 +1086,8 @@ function App() {
       </div>
       {/* Footer */}
       <div className="bg-black text-white">
-        <div className="mx-4 py-16">
-          <div className="grid grid-cols-3 gap-12">
+        <div className="mx-4 py-10 md:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Taggify */}
             <div>
               <motion.h3
